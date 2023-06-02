@@ -100,7 +100,7 @@ class PessoaController {
   }
 
   static async apagaMatricula(req, res) {
-    const { estudanteId, matriculaId } = req.params
+    const { matriculaId } = req.params
     try {
       await database.Matriculas.destroy({ where: { id: Number(matriculaId) }})
       return res.status(200).json({ mensagem: `id ${matriculaId} deletado` })
